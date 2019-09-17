@@ -12181,13 +12181,13 @@ Note that in such a scenario, we would distinguish one of the production as the 
 
 The following is the character string of one possible program in the language. This character string is an instance of the concrete syntax of the language.
 
-```
+<pre>
 and (or (and (true, false), not(false)), or (true, false))
-```
+</pre>
 
 The above character string might be converted into a structured representation of the program within some host language (i.e., the programming language being used to operate on these programs: checking for errors, interpreting, or compiling the program). Below, we present one possible Python representation of the instance of the abstract syntax (i.e., the parse tree) corresponding to the concrete syntax instance above. This representation uses nested Python dictionaries to represent the parse tree, with strings being used to represent node labels and leaves.
 
-```
+<pre>
 { "And": [
     { "Or": [
         { "And": ["True","False"]}, 
@@ -12197,7 +12197,7 @@ The above character string might be converted into a structured representation o
     { "Or": ["True","False"]}
   ]
 }
-```
+</pre>
 </div>
 </div>
 </div>
@@ -12416,18 +12416,18 @@ Notice the omission of the parentheses. Also, there is no need to be concerned w
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>(&#39;body&#39;,)
-[&lt;_ast.FunctionDef object at 0x10e839ba8&gt;]
+[&lt;_ast.FunctionDef object at 0x10e834ba8&gt;]
 True
 (&#39;name&#39;, &#39;args&#39;, &#39;body&#39;, &#39;decorator_list&#39;, &#39;returns&#39;)
-[&lt;_ast.Return object at 0x10e839a58&gt;]
+[&lt;_ast.Return object at 0x10e834a58&gt;]
 True
 (&#39;value&#39;,)
-&lt;_ast.BinOp object at 0x10e839be0&gt;
+&lt;_ast.BinOp object at 0x10e834be0&gt;
 True
-&lt;_ast.Name object at 0x10e839c18&gt;
+&lt;_ast.Name object at 0x10e834c18&gt;
 x
 &lt;_ast.Add object at 0x103691710&gt;
-&lt;_ast.Num object at 0x10e839d68&gt;
+&lt;_ast.Num object at 0x10e834d68&gt;
 2
 </pre>
 </div>
