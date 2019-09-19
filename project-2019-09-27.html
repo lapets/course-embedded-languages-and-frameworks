@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>project-2019-09-25</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>project-2019-09-27</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11845,7 +11845,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Organization and Documentation</strong></p>
 <ul>
-<li>Include a README file within the root directory of your submission.</li>
+<li>Include a README file or Jupyter Notebook document within the root directory of your submission.</li>
 <li>Include in the README a one-paragraph overview (5-7 sentences at least) describing the goal of your project and your approach. Include references to relevant concepts and terminology from the course as appropriate when describing your project.</li>
 </ul>
 
@@ -11859,7 +11859,7 @@ div#notebook {
 <p><strong>Technical Requirements</strong></p>
 <ol>
 <li>Identify and define using BNF notation the subset of the host language syntax corresponding to the embedded language that you will be processing, analyzing, or transforming.<ul>
-<li>The language should contain at least 10-20 constructs.</li>
+<li>The language should contain at least 10-20 constructs (typically, each construct will correspond to one case within a production rule in the BNF notation defining the grammar of the language).</li>
 <li>The language should support some family of methods or operators that can appear in expressions (also 10-20).</li>
 </ul>
 </li>
@@ -11874,7 +11874,22 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is the end of the document.</p>
+<h2 id="Project-Ideas">Project Ideas<a class="anchor-link" href="#Project-Ideas">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Below are some high-level descriptions of ideas that are suitable for a project.</p>
+<ol>
+<li>Statically determine (i.e., without running the code) how much memory a <a href="https://pandas.pydata.org/">pandas</a> dataframe workflow will use if it is actually executed. Metrics other than memory (e.g., the maximum size of any dataframe in the workflow) are also an option.</li>
+<li>Detect common security vulnerabilities that arise from unsafe use of <code>eval()</code> within a <a href="https://www.fullstackpython.com/flask.html">Flask</a> app.</li>
+<li>Analyze programs that use an Amazon Web Services API wrapper library such as <a href="http://boto.cloudhackers.com/en/latest/#">boto</a> to measure upper bounds on storage, data traffic, or cost.</li>
+<li>Transpiling between different versions of a library (e.g., changing deprecated or obsolete features into supported ones).</li>
+<li>Statically analyzing numerical program to give upper bounds on the float-point errors <a href="http://elina.ethz.ch/papers/PLDI15-Octagon.pdf">[1]</a>, <a href="http://www.lix.polytechnique.fr/Labo/Sylvie.Putot/Publications/NotesCoursDigicosme.pdf">[2]</a>, <a href="http://www.lix.polytechnique.fr/~putot/Publications/sas06.pdf">[3]</a>.</li>
+</ol>
 
 </div>
 </div>
