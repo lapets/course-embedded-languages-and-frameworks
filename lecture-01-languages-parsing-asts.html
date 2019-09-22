@@ -11904,9 +11904,9 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="background-color:#F6F4D8; padding:5px 8px 5px 8px;">
 <b>Definition.</b> Given an alphabet $A$, let $U$ be the set of all finite strings that can be built using characters from $A$ (including the empty string $\varepsilon$). In other words, we can say:
-
+<span style="height:25px; display:block;"></span>
 $$U \ = \ \{s \ | \ s \ \mathrm{is \ a \ finite \ string \ of \ characters \ from \ alphabet} \ A\}$$
-
+<span style="height:25px; display:block;"></span>
 Any subset $L \subset U$ is a <i>language</i>. That is, any set of character strings (whether the set is finite or infinite) is a language.
 </div>
 </div>
@@ -11945,9 +11945,9 @@ Any subset $L \subset U$ is a <i>language</i>. That is, any set of character str
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="background-color:#F6F4D8; padding:5px 8px 5px 8px;">
 <b>Definition.</b> Given a set of tokens $T$, let $U$ be the set of all finite sequences that can be built using tokens from $T$ (including the empty sequence). In other words, we can say:
-
+<span style="height:25px; display:block;"></span>
 $$U \ = \ \{s \ | \ s \ \mathrm{is \ a \ finite \ sequence \ of \ tokens \ from} \ T\}$$
-
+<span style="height:25px; display:block;"></span>
 Any subset $L \subset U$ is a <i>language</i>. That is, any set of token sequences (whether the set is finite or infinite) is a language.
 </div>
 </div>
@@ -11959,13 +11959,13 @@ Any subset $L \subset U$ is a <i>language</i>. That is, any set of token sequenc
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="background-color:#E1F8E1; padding:5px 8px 5px 8px;">
 <b>Example.</b> Consider the following set of tokens:
-
+<span style="height:25px; display:block;"></span>
 $$T = \{\textbf{true}, \textbf{false}, \textbf{or}, \textbf{and}, \textbf{not}, \textbf{(}, \textbf{)}, \textbf{,}\}$$
-
+<span style="height:25px; display:block;"></span>
 The set of token sequences that represent valid boolean formulas is a language:
-
+<span style="height:25px; display:block;"></span>
 $$L = \{\ \textbf{true} \ , \ \textbf{false} \ , \ \textbf{not ( false )} \ , \ \textbf{and ( true , false )} \ , \ldots \ \}$$
-
+<span style="height:25px; display:block;"></span>
 Note that $L$ is an infinitely large set.
 </div>
 </div>
@@ -12041,16 +12041,17 @@ Note that $L$ is an infinitely large set.
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="background-color:#E1F8E1; padding:5px 8px 5px 8px;">
 <b>Example.</b> Let $T$ be a set of tokens:
-
+<span style="height:25px; display:block;"></span>
 $$T = \{\textbf{true}\}$$
-
+<span style="height:25px; display:block;"></span>
 The following is a grammar for a very simple programming language that contains only one possible token sequence consisting of a single token $\textbf{true}$:
-
+<span style="height:25px; display:block;"></span>
 $$\textit{program} ::= \textbf{true}$$
-
+<span style="height:25px; display:block;"></span>
 In this case, the language is finite and small, so we can write it down as a set:
-
+<span style="height:25px; display:block;"></span>
 $$L = \{ \ \textbf{true} \ \}$$
+<span style="height:25px; display:block;"></span>
 </div>
 </div>
 </div>
@@ -12061,19 +12062,20 @@ $$L = \{ \ \textbf{true} \ \}$$
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="background-color:#E1F8E1; padding:5px 8px 5px 8px;">
 <b>Example.</b> We can extend the language in the above example by adding another token:
-
+<span style="height:25px; display:block;"></span>
 $$T = \{\textbf{true}, \textbf{false}\}$$
-
+<span style="height:25px; display:block;"></span>
 The following BNF grammar definition now contains two choices (each choice is a sequence consisting of a single terminal):
-
+<span style="height:25px; display:block;"></span>
 \begin{eqnarray*}
 \textit{program} & ::= & \textbf{true} \\
                  &  |  & \textbf{false} \\
 \end{eqnarray*}
-
+<span style="height:25px; display:block;"></span>
 The programming language that satisfies the above grammar contains two token sequences (each consisting of a single token):
-
+<span style="height:25px; display:block;"></span>
 $$L = \{ \ \textbf{true} \ , \ \textbf{false} \ \}$$
+<span style="height:25px; display:block;"></span>
 </div>
 </div>
 </div>
@@ -12084,11 +12086,11 @@ $$L = \{ \ \textbf{true} \ , \ \textbf{false} \ \}$$
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="background-color:#E1F8E1; padding:5px 8px 5px 8px;">
 <b>Example.</b> Extending the above language definition further, we can construct a language for Boolean formulas. The set of tokens $T$ would be defined as follows: 
-
+<span style="height:25px; display:block;"></span>
 $$T = \{\textbf{true}, \textbf{false}, \textbf{or}, \textbf{and}, \textbf{not}, \textbf{(}, \textbf{)}, \textbf{,}\}$$
-
+<span style="height:25px; display:block;"></span>
 The following BNF grammar definition now contains five choices (each choice is a sequence consisting of non-terminals and/or terminals):
-
+<span style="height:25px; display:block;"></span>
 \begin{eqnarray*}
 \textit{program} & ::= & \textbf{true} \\
                  &  |  & \textbf{false} \\
@@ -12096,10 +12098,11 @@ The following BNF grammar definition now contains five choices (each choice is a
                  &  |  & \textbf{or} \ \textbf{(} \ \textit{program} \ \textbf{,} \ \textit{program} \ \textbf{)}\\
                  &  |  & \textbf{not} \ \textbf{(} \ \textit{program} \ \textbf{)}\\
 \end{eqnarray*}
-
+<span style="height:25px; display:block;"></span>
 This programming language now contains infinitely many finite token sequences:
-
+<span style="height:25px; display:block;"></span>
 $$L = \{\ \textbf{true} \ , \ \textbf{false} \ , \ \textbf{not ( false )} \ , \ \textbf{and ( true , false )} \ , \ldots \ \}$$
+<span style="height:25px; display:block;"></span>
 </div>
 </div>
 </div>
@@ -12109,12 +12112,13 @@ $$L = \{\ \textbf{true} \ , \ \textbf{false} \ , \ \textbf{not ( false )} \ , \ 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="background-color:#E1F8E1; padding:5px 8px 5px 8px;">
-<b>Example.</b> We can extend the language by adding a production rule for statements, and then by allowing a program to be a sequence of one or more statements (that themselves may contain formulas). The set of tokens is defined below:
-
+<a name="85feea29-7b81-4b58-bf08-bf8b0b2195e9"></a>
+<b>Example [<a href="#85feea29-7b81-4b58-bf08-bf8b0b2195e9">link</a>].</b> We can extend the language by adding a production rule for statements, and then by allowing a program to be a sequence of one or more statements (that themselves may contain formulas). The set of tokens is defined below:
+<span style="height:25px; display:block;"></span>
 $$T = \{\textbf{true}, \textbf{false}, \textbf{or}, \textbf{and}, \textbf{not}, \textbf{(}, \textbf{)}, \textbf{,}, \textbf{print}, \textbf{skip}, \textbf{;}\}$$
-
+<span style="height:25px; display:block;"></span>
 Note that in such a scenario, we would distinguish one of the production as the one representing token sequences in our language; in this example, that production rule is the one for $\textit{program}$. The following is the grammar definition for this language:
-
+<span style="height:25px; display:block;"></span>
 \begin{eqnarray*}
 \textit{program} & ::= & \textit{statement} \\
                  &  |  & \textit{statement} \ \textit{program} \\
@@ -12124,10 +12128,11 @@ Note that in such a scenario, we would distinguish one of the production as the 
  & & \\
 \textit{formula} & ::= & \textbf{true} \\
                  &  |  & \textbf{false} \\
-                 &  |  & \textbf{and} \ \textbf{(} \ \textit{formula} \ \textbf{,} \ \textit{formula} \ \textbf{)}\\
+                 &  |  & \textbf{and} \ \textbf{(} \ \textit{formula} \ \textbf{,} \ \textit{formula} \ \textbf{)} \\
                  &  |  & \textbf{or} \ \textbf{(} \ \textit{formula} \ \textbf{,} \ \textit{formula} \ \textbf{)}\\
                  &  |  & \textbf{not} \ \textbf{(} \ \textit{formula} \ \textbf{)}\\
 \end{eqnarray*}
+<span style="height:25px; display:block;"></span>
 </div>
 </div>
 </div>
@@ -12416,18 +12421,18 @@ Notice the omission of the parentheses. Also, there is no need to be concerned w
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>(&#39;body&#39;,)
-[&lt;_ast.FunctionDef object at 0x10e834ba8&gt;]
+[&lt;_ast.FunctionDef object at 0x10e845358&gt;]
 True
 (&#39;name&#39;, &#39;args&#39;, &#39;body&#39;, &#39;decorator_list&#39;, &#39;returns&#39;)
-[&lt;_ast.Return object at 0x10e834a58&gt;]
+[&lt;_ast.Return object at 0x10e845c50&gt;]
 True
 (&#39;value&#39;,)
-&lt;_ast.BinOp object at 0x10e834be0&gt;
+&lt;_ast.BinOp object at 0x10e845cc0&gt;
 True
-&lt;_ast.Name object at 0x10e834c18&gt;
+&lt;_ast.Name object at 0x10e845e48&gt;
 x
-&lt;_ast.Add object at 0x103691710&gt;
-&lt;_ast.Num object at 0x10e834d68&gt;
+&lt;_ast.Add object at 0x103e917f0&gt;
+&lt;_ast.Num object at 0x10e845d30&gt;
 2
 </pre>
 </div>

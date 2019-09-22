@@ -11878,29 +11878,31 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="background-color:#F6F4D8; padding:5px 8px 5px 8px;">
-<b>Definition.</b> An *inference rule* is a notation used within mathematics and computer science to define relationships between mathematical facts and formulas. Each inference rule consists of a horizontal line with zero or more logical formulas above the line and one logial formula below the line. The logical formulas above the line are called *premises*, and the formula below the line is called the *conclusion*.
-
+<b>Definition.</b> An <i>inference rule</i> is a notation used within mathematics and computer science to define relationships between mathematical facts and formulas. Each inference rule consists of a horizontal line with zero or more logical formulas above the line and one logial formula below the line. The logical formulas above the line are called *premises*, and the formula below the line is called the <i>conclusion</i>.
+<span style="height:25px; display:block;"></span>
 \begin{eqnarray*}
 \mathrm{\scriptsize [Name{-}of{-}Inference{-}Rule]} & \ & \frac{\ \ \textit{premise} \ \ \ \ \ \ \textit{premise}\ \ }{\textit{conclusion}}\\
 \end{eqnarray*}
-
+<span style="height:25px; display:block;"></span>
 \begin{eqnarray*}
 \mathrm{\scriptsize [Example]} & \ & \frac{\ \ \textbf{sun is out} \ \ \ \ \ \ \textbf{sky is clear}\ \ }{\textbf{it is not raining}}\\
 \end{eqnarray*}
-
+<span style="height:25px; display:block;"></span>
 An inference rule can be interpreted as a portion of a larger algorithm. The premises specify the recursive calls, or calls to other functions, that may need to be made, and the results that are obtained from those invocations. The conclusion specifies what inputs can be handled by that inference rule, and what outputs should be returned given those inputs and the premises.
 
-Suppose we have a binary relation $\Downarrow$ between instances of an abstract syntax. We can read $a \Downarrow a'$ as *$a$ becomes $a'$ when we follow the operational semantics of the language*.
-
+Suppose we have a binary relation $\Downarrow$ between instances of an abstract syntax. We can read $a \Downarrow a'$ as <i>$a$ becomes $a'$</i> when we follow the operational semantics of the language*.
+<span style="height:25px; display:block;"></span>
 \begin{eqnarray*}
 \mathrm{\scriptsize [Algorithm{-}Case]} & \ & \frac{\ \ \textit{input}_1 \Downarrow \textit{output}_1 \ \ \ \ \ \ \textit{input}_1 \Downarrow \textit{output}_1\ \ }{\textit{input}_0 \Downarrow \textit{output}_0}\\
 \end{eqnarray*}
-
+<span style="height:25px; display:block;"></span>
 Note that in the above, $\textit{input}_1$ and $\textit{input}_2$ may depend on $\textit{input}_0$, and $\textit{output}_0$ may depend on $\textit{output}_1$ and $\textit{output}_2$. In other words, one could rewrite an inference rule in the following way using natural language:
-
+<span style="height:25px; display:block;"></span>
 \begin{eqnarray*}
 \mathrm{\scriptsize [Algorithm{-}Case]} & \ & \frac{\textbf{this algorithm on } \textit{input}_1 \textbf{ yields } \textit{output}_1 \ \ \ \ \ \ \textbf{this algorithm on } \textit{input}_2 \textbf{ yields } \textit{output}_2}{\textbf{given } \textit{input}_0, \textbf{ if the above are true then output } \textit{output}_0 }\\
 \end{eqnarray*}
+<span style="height:25px; display:block;"></span>
+
 </div>
 </div>
 </div>
@@ -11938,8 +11940,9 @@ Note that in the above, $\textit{input}_1$ and $\textit{input}_2$ may depend on 
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="background-color:#F6F4D8; padding:5px 8px 5px 8px;">
 <b>Definition.</b> An <i>evaluation algorithm</i> converts any abstract syntax tree that represents an expression into an abstract syntax tree that represents a value.
-
+<span style="height:25px; display:block;"></span>
 $$\overbrace{a}^{\textbf{AST}} \underbrace{\longrightarrow}_{\textbf{evaluation}} \overbrace{v}^{\textbf{value}}$$
+<span style="height:25px; display:block;"></span>
 </div>
 </div>
 </div>
@@ -11950,35 +11953,110 @@ $$\overbrace{a}^{\textbf{AST}} \underbrace{\longrightarrow}_{\textbf{evaluation}
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="background-color:#E1F8E1; padding:5px 8px 5px 8px;">
 <b>Example.</b> Define the abstract syntax according to the following grammar, with $A$ consisting of all formula abstract syntax instances, and $V = \{\textbf{true}, \textbf{true}\}$ consisting of all value abstract syntax instances:
-
+<span style="height:25px; display:block;"></span>
 \begin{eqnarray*}
 \textit{formula} & ::= & \textit{value} \ \ | \ \ \textbf{not} \ \textit{formula} \ \ | \ \
                          \textit{formula} \ \textbf{and} \ \textit{formula} \ \ | \ \ \textit{formula} \ \textbf{or} \ \textit{formula} \\
 \textit{value} & ::= & \textbf{true} \ \ | \ \ \textbf{false} \\
 \end{eqnarray*}
-
+<span style="height:25px; display:block;"></span>
 Let $\neg$, $\wedge$ and $\vee$ represent boolean negation, conjunction, and disjunction (respectively) on the values $\textbf{true}$ and $\textbf{false}$. Note that each of these is just a small truth table of two or four rows. The following is a definition of an operational semantics for this language. Because these operational semantics inference rules define how expressions can be converted into values, they also represent an evaluation algorithm.
-
+<span style="height:25px; display:block;"></span>
 \begin{eqnarray*}
 \mathrm{\scriptsize [Value]} & \ & \frac{}{v \Downarrow v}\\
 \end{eqnarray*}
-
+<span style="height:25px; display:block;"></span>
 \begin{eqnarray*}
 \mathrm{\scriptsize [Not]} & \ & \frac{f \Downarrow v}{\textbf{not} \ f \Downarrow \neg v}\\
 \end{eqnarray*}
-
+<span style="height:25px; display:block;"></span>
 \begin{eqnarray*}
 \mathrm{\scriptsize [And]} & \ & \frac{f_1 \Downarrow v_1 \ \ \ \ \ \ f_2 \Downarrow v_2}{f_1 \ \textbf{and} \ f_2 \Downarrow v_1 \wedge v_2}\\
 \end{eqnarray*}
-
+<span style="height:25px; display:block;"></span>
 \begin{eqnarray*}
 \mathrm{\scriptsize [Or]} & \ & \frac{f_1 \Downarrow v_1 \ \ \ \ \ \ f_2 \Downarrow v_2}{f_1 \ \textbf{or} \ f_2 \Downarrow v_1 \vee v_2}\\
 \end{eqnarray*}
-
+<span style="height:25px; display:block;"></span>
 Note that this is not circular: the functions $\neg$, $\wedge$ and $\vee$ are much simpler than the operators $\textbf{not}$, $\textbf{and}$, and $\textbf{or}$ because the former can only operate on values (i.e., $\textbf{true}$ and $\textbf{false}$) while the latter can take arbitrary formulas as inputs.
 </div>
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">ast</span> 
+
+<span class="k">class</span> <span class="nc">evaluate_with_environment</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">NodeVisitor</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">visit_Module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">env</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">body</span><span class="p">:</span>
+            <span class="n">s</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">env</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">body</span><span class="p">:</span>
+            <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">results</span>
+
+    <span class="k">def</span> <span class="nf">visit_Assign</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="n">env</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">env</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">env</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="n">env</span><span class="p">[</span><span class="n">node</span><span class="o">.</span><span class="n">targets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+    
+    <span class="k">def</span> <span class="nf">visit_Expr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">env</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">visit_BinOp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">env</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">env</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">op</span><span class="p">)</span> <span class="ow">is</span> <span class="n">ast</span><span class="o">.</span><span class="n">Add</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">visit_Num</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">n</span>
+
+    <span class="k">def</span> <span class="nf">visit_Name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="n">node</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">evaluate_with_environment</span><span class="p">()</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;8&#39;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">evaluate_with_environment</span><span class="p">()</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;5 + 8 + 9 + 3&#39;</span><span class="p">)))</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">x = 123</span>
+<span class="s2">y = 123 + x</span>
+<span class="s2">y</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">evaluate_with_environment</span><span class="p">()</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">input</span><span class="p">)))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[8]
+[25]
+[None, None, 246]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12007,7 +12085,7 @@ Note that this is not circular: the functions $\neg$, $\wedge$ and $\vee$ are mu
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">ast</span> 
@@ -12060,7 +12138,7 @@ False
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">astor</span>
@@ -12107,7 +12185,7 @@ Checking: True
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[3]:</div>
+<div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -12139,9 +12217,20 @@ Checking: True
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="background-color:#E1F8E1; padding:5px 8px 5px 8px;">
+<a name="85feea29-7b81-4b58-bf08-bf8b0b2195e3"></a>
+<b>Example [<a href="#85feea29-7b81-4b58-bf08-bf8b0b2195e3">link</a>].</b> Below is an implementation of a static analysis algorithm that infers the type of a single Python expression.
+</div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">ast</span> 
@@ -12157,7 +12246,7 @@ Checking: True
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">visit_BoolOp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
-        <span class="k">if</span> <span class="nb">set</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">values</span><span class="p">])</span>  <span class="o">==</span> <span class="p">{</span><span class="nb">bool</span><span class="p">}:</span>
+        <span class="k">if</span> <span class="nb">set</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">values</span><span class="p">])</span> <span class="o">==</span> <span class="p">{</span><span class="nb">bool</span><span class="p">}:</span>
             <span class="k">return</span> <span class="nb">bool</span>
 
     <span class="k">def</span> <span class="nf">visit_BinOp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
@@ -12165,6 +12254,12 @@ Checking: True
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span> <span class="ow">and</span>\
                <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
                 <span class="k">return</span> <span class="nb">int</span>
+    
+    <span class="k">def</span> <span class="nf">visit_Compare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">ops</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="ow">in</span> <span class="p">[</span><span class="n">ast</span><span class="o">.</span><span class="n">Eq</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span> <span class="ow">and</span>\
+               <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">comparators</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
+                <span class="k">return</span> <span class="nb">bool</span>
     
     <span class="k">def</span> <span class="nf">visit_Num</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">n</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
@@ -12180,6 +12275,7 @@ Checking: True
 <span class="nb">print</span><span class="p">(</span><span class="n">infer_type</span><span class="p">()</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;False or 5&#39;</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">infer_type</span><span class="p">()</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;False + True&#39;</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">infer_type</span><span class="p">()</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;3 or 4 and 5&#39;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">infer_type</span><span class="p">()</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;3 == 5&#39;</span><span class="p">)))</span>
 <span class="c1">#print(infer_type().visit(ast.parse(&#39;5&#39;)))</span>
 </pre></div>
 
@@ -12203,6 +12299,7 @@ Checking: True
 None
 None
 None
+&lt;class &#39;bool&#39;&gt;
 </pre>
 </div>
 </div>
@@ -12211,30 +12308,55 @@ None
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="background-color:#E1F8E1; padding:5px 8px 5px 8px;">
+<a name="85feea29-7b81-4b58-bf08-bf8b0b2195e5"></a>
+<b>Example [<a href="#85feea29-7b81-4b58-bf08-bf8b0b2195e5">link</a>].</b> The static analysis algorithm below uses the <a href="https://www.sympy.org/en/index.html">SymPy</a> library to build a polynomial that represents the number of digits in the integer represented by a Python expression. Notice that if the expression contains variables, the polynomial will have placeholders for the number of digits that the integer represented by the variable may have.
+</div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">ast</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">ast</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">sympify</span><span class="p">,</span> <span class="n">lambdify</span>
 
-<span class="k">class</span> <span class="nc">evaluate_with_environment</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">NodeVisitor</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">infer_int_digits</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">NodeVisitor</span><span class="p">):</span>
     
     <span class="k">def</span> <span class="nf">visit_Module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
-        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">body</span><span class="p">:</span>
-            <span class="n">s</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mi">123</span><span class="p">}</span>
-            <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">body</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">results</span>
 
     <span class="k">def</span> <span class="nf">visit_Expr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
-        <span class="n">node</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">env</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">visit_Name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="n">node</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
+    <span class="k">def</span> <span class="nf">visit_BinOp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">op</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="n">ast</span><span class="o">.</span><span class="n">Sub</span><span class="p">]:</span>
+            <span class="n">e1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+            <span class="n">e2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">e1</span>
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">op</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="n">ast</span><span class="o">.</span><span class="n">Mult</span><span class="p">]:</span>
+            <span class="n">e1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+            <span class="n">e2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">e1</span> <span class="o">+</span> <span class="n">e2</span> <span class="o">+</span> <span class="mi">1</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">evaluate_with_environment</span><span class="p">()</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)))</span>
+    <span class="k">def</span> <span class="nf">visit_Name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">sympify</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">id</span> <span class="o">+</span> <span class="s2">&quot;_digits&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">visit_Num</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">n</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
+            <span class="n">digits</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">n</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">sympify</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">digits</span><span class="p">))</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">infer_int_digits</span><span class="p">()</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;x * x * 45 * y - z * 10000&#39;</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+<span class="n">f</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -12247,13 +12369,15 @@ None
 
 <div class="output_area">
 
-<div class="prompt"></div>
+<div class="prompt output_prompt">Out[6]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[123]
-</pre>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$\displaystyle 2 x_{digits} + y_{digits} + 5$
 </div>
+
 </div>
 
 </div>
@@ -12304,7 +12428,7 @@ None
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Turns any function of one variable into a function </span>
@@ -12317,65 +12441,6 @@ None
     <span class="k">return</span> <span class="n">h_prints</span>
 
 <span class="nd">@make_print</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span>
-
-<span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The result is: 8
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[6]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>8</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This decorator takes an argument (in other words,</span>
-<span class="c1"># it is a function that returns a decorator).</span>
-<span class="k">def</span> <span class="nf">make_print_decorator</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">h</span><span class="p">):</span>
-        <span class="k">def</span> <span class="nf">h_prints</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="n">h</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">message</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
-            <span class="k">return</span> <span class="n">result</span>
-        <span class="k">return</span> <span class="n">h_prints</span>
-    <span class="k">return</span> <span class="n">decorator</span>
-
-<span class="nd">@make_print_decorator</span><span class="p">(</span><span class="s2">&quot;The result is&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span>
 
@@ -12421,6 +12486,120 @@ None
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This decorator takes an argument (in other words,</span>
+<span class="c1"># it is a function that returns a decorator).</span>
+<span class="k">def</span> <span class="nf">make_print_decorator</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">h</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">h_prints</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">h</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">message</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">result</span>
+        <span class="k">return</span> <span class="n">h_prints</span>
+    <span class="k">return</span> <span class="n">decorator</span>
+
+<span class="nd">@make_print_decorator</span><span class="p">(</span><span class="s2">&quot;The result is&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span>
+
+<span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The result is: 8
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>8</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">import</span> <span class="nn">ast</span>
+
+<span class="c1"># Decorator that prints the source code of</span>
+<span class="c1"># the function that it decorates.</span>
+<span class="k">def</span> <span class="nf">print_source_opt</span><span class="p">(</span><span class="n">visible</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">visible</span><span class="p">:</span>
+        <span class="k">return</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">f</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">print_source</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">f</span>
+        <span class="k">return</span> <span class="n">print_source</span>
+
+<span class="c1"># This will not print anything.</span>
+<span class="nd">@print_source_opt</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+
+<span class="c1"># This will print the AST.</span>
+<span class="nd">@print_source_opt</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">x</span>
+   
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Module(body=[FunctionDef(name=&#39;h&#39;, args=arguments(args=[arg(arg=&#39;x&#39;, annotation=None)], vararg=None, kwonlyargs=[], kw_defaults=[], kwarg=None, defaults=[]), body=[Return(value=BinOp(left=Num(n=3), op=Add(), right=Name(id=&#39;x&#39;, ctx=Load())))], decorator_list=[Call(func=Name(id=&#39;print_source_opt&#39;, ctx=Load()), args=[NameConstant(value=True)], keywords=[])], returns=None)])
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">inspect</span>
